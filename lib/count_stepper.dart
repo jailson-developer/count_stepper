@@ -3,26 +3,47 @@ library count_stepper;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
-
 typedef void OnTapCallback(int newValue);
 
 class CountStepper extends StatefulWidget {
+  /// Value default */
   final int defaultValue;
+
+  /// Max value */
   final int max;
+
+  /// Min value */
   final int min;
+
+  /// Controller to retrieve the current value */
   final StepperController? controller;
+
+  /// Space between the buttons and the text */
   final double space;
+
+  /// Callback onPressed */
   final OnTapCallback? onPressed;
+
+  /// Icon from increment action, default value is Icon(Icons.add_circle) */
   final Widget? iconIncrement;
+
+  /// iconIncrement color, if the property is filled, it will overwrite the color informed in iconColor*/
   final Color? iconIncrementColor;
+
+  /// Icon from Decrement action, default value is Icon(Icons.remove_circle_outline) */
   final Widget? iconDecrement;
+
+  /// IconDecrement color, if the property is filled, it will overwrite the color informed in iconColor*/
   final Color? iconDecrementColor;
+
+  /// Color default from buttons */
+  final Color? iconColor;
+
+  /// Radius of buttons */
   final double splashRadius;
+
+  /// TextStyle of text*/
+  final TextStyle? textStyle;
 
   const CountStepper({
     Key? key,
@@ -36,7 +57,9 @@ class CountStepper extends StatefulWidget {
     this.iconDecrement,
     this.iconIncrementColor,
     this.iconDecrementColor,
+    this.iconColor,
     this.splashRadius = 15.0,
+    this.textStyle,
   }) : super(key: key);
   @override
   _CountStepperState createState() => _CountStepperState();
@@ -48,11 +71,13 @@ class _CountStepperState extends State<CountStepper> {
   late Widget _iconDecrement;
   @override
   void initState() {
-    final iconColor = Colors.red; //Theme.of(context).primaryColor;
     actual = widget.defaultValue;
-    _iconIncrement = widget.iconIncrement ?? Icon(Icons.add_circle, color: widget.iconIncrementColor ?? iconColor);
-    _iconDecrement =
-        widget.iconDecrement ?? Icon(Icons.remove_circle_outline, color: widget.iconDecrementColor ?? iconColor);
+    _iconIncrement = widget.iconIncrement ??
+        Icon(Icons.add_circle,
+            color: widget.iconIncrementColor ?? widget.iconColor);
+    _iconDecrement = widget.iconDecrement ??
+        Icon(Icons.remove_circle_outline,
+            color: widget.iconDecrementColor ?? widget.iconColor);
     super.initState();
   }
 
@@ -75,7 +100,7 @@ class _CountStepperState extends State<CountStepper> {
           },
         ),
         SizedBox(width: widget.space),
-        Text(actual.toString()),
+        Text(actual.toString(), style: widget.textStyle),
         SizedBox(width: widget.space),
         IconButton(
           constraints: BoxConstraints(),
