@@ -6,11 +6,11 @@ A simple Flutter widget that allows you to increase/decrease a value.
 
 ## Screenshots
 
-![Horizontal CupertinoStepper](https://raw.githubusercontent.com/jailson-developer/count_stepper/main/screenshots/1.png "Horizontal CupertinoStepper")
+![Image 1](https://raw.githubusercontent.com/jailson-developer/count_stepper/main/screenshots/1.png "Image 1")
 
 ### Customize individual color
 
-![Vertical CupertinoStepper](https://raw.githubusercontent.com/jailson-developer/count_stepper/main/screenshots/2.png "Vertical CupertinoStepper")
+![Image 2](https://raw.githubusercontent.com/jailson-developer/count_stepper/main/screenshots/2.png "Image 2")
 
 ### Example
 
