@@ -1,7 +1,7 @@
 name: count_stepper
 description: A simple Flutter widget that allows you to increment/decrement a value.
-version: 0.0.1
-homepage: https://github.com/Jailson66/count_stepper
+version: 0.0.4
+homepage: https://github.com/jailson-developer/count_stepper
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
