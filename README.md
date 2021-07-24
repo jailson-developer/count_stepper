@@ -1,14 +1,52 @@
-# count_stepper
+# Count Stepper for Flutter
 
-A new Flutter package project.
+[![license: BSD](https://img.shields.io/badge/license-BSD-yellow.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
-## Getting Started
+A simple Flutter widget that allows you to increase/decrease a value.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Screenshots
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+![Horizontal CupertinoStepper](https://raw.githubusercontent.com/jailson-developer/count_stepper/main/screenshots/1.png "Horizontal CupertinoStepper")
+
+### Customize individual color
+
+![Vertical CupertinoStepper](https://raw.githubusercontent.com/jailson-developer/count_stepper/main/screenshots/2.png "Vertical CupertinoStepper")
+
+### Example
+
+``` dart
+import 'package:flutter/material.dart';
+import 'package:count_stepper/count_stepper.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        body: CountStepper(
+          iconColor: Theme.of(context).primaryColor,
+          defaultValue: 2,
+          max: 10,
+          min: 1,
+          iconDecrementColor: Colors.red,
+          splashRadius: 25,
+          onPressed: (value) {},
+        ),
+      ),
+    );
+  }
+}
+```
+
+## Usage
+
+To use this package, add `count_stepper` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
